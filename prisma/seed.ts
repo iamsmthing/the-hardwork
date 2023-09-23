@@ -1,3 +1,4 @@
+import { hashPassword } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { TASK_STATUS } from "@prisma/client";
 
@@ -11,14 +12,15 @@ const getRandomTaskStatus = () => {
 };
 
 async function main() {
+  const hashKey = await hashPassword("password");
   const user = await db.user.upsert({
-    where: { email: "user@email.com" },
+    where: { email: "john2@email.com" },
     update: {},
     create: {
-      email: "user@email.com",
-      firstName: "User",
-      lastName: "Person",
-      password: "password",
+      email: "john2@gmail.com",
+      firstName: "John",
+      lastName: "Doe",
+      password: hashKey,
       projects: {
         create: new Array(5).fill(1).map((_, i) => ({
           name: `Project ${i}`,

@@ -2,7 +2,10 @@ import GlassPane from "@/components/GlassPane";
 
 import Sidebar from "@/components/Sidebar";
 import "@/styles/global.css";
-export default function DashboardRootLayout({ children }) {
+interface AuthRootLayoutProps {
+  children: React.ReactNode; // or the appropriate type for your children
+}
+export default function DashboardRootLayout({ children }: AuthRootLayoutProps) {
   return (
     <html lang="en">
       <head>

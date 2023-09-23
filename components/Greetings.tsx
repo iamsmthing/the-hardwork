@@ -37,7 +37,7 @@ const Greetings = async () => {
         </h4>
       </div>
       <div>
-        <Button size="small" className="bg-blue-600">
+        <Button className="font-bold bg-violet-600">
           Today&apos;s Schedule
         </Button>
       </div>

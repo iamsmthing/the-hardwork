@@ -56,7 +56,11 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={buttonClasses({ intent, size, className })} {...props}>
+    <button
+      type="submit"
+      className={buttonClasses({ intent, size, className })}
+      {...props}
+    >
       {children}
     </button>
   );

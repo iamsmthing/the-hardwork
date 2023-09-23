@@ -67,7 +67,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
   const content = mode === "register" ? registerContent : signinContent;
 
   return (
-    <Card>
+    <Card className={undefined}>
       <div className="w-full">
         <div className="text-center">
           <h2 className="text-3xl mb-2">{content.header}</h2>
@@ -87,7 +87,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
                   placeholder="First Name"
                   value={formState.firstName}
                   className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                  onChange={(e) =>
+                  onChange={(e: { target: { value: any } }) =>
                     setFormState((s) => ({ ...s, firstName: e.target.value }))
                   }
                 />
@@ -100,7 +100,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
                   name="lastName"
                   value={formState.lastName}
                   className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                  onChange={(e) =>
+                  onChange={(e: { target: { value: any } }) =>
                     setFormState((s) => ({ ...s, lastName: e.target.value }))
                   }
                 />
@@ -116,7 +116,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
               placeholder="Email"
               value={formState.email}
               className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-              onChange={(e) =>
+              onChange={(e: { target: { value: any } }) =>
                 setFormState((s) => ({ ...s, email: e.target.value }))
               }
             />
@@ -130,7 +130,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
               type="password"
               placeholder="Password"
               className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-              onChange={(e) =>
+              onChange={(e: { target: { value: any } }) =>
                 setFormState((s) => ({ ...s, password: e.target.value }))
               }
             />
@@ -147,9 +147,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
               </span>
             </div>
             <div>
-              <Button type="submit" intent="secondary">
-                {content.buttonText}
-              </Button>
+              <Button intent="secondary">{content.buttonText}</Button>
             </div>
           </div>
         </form>
