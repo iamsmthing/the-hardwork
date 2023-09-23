@@ -44,7 +44,7 @@ export default async function Page() {
                     </div>
                   }
                 >
-                  <ProjectCard project={project} />
+                  <ProjectCard key={project.id} project={project} />
                 </Suspense>
               </Link>
             </div>
