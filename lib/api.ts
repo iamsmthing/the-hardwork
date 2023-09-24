@@ -22,7 +22,7 @@ export const register = async (user: any) => {
   console.log("user:", user);
   return fetcher({
     // url: "http://localhost:3000/api/register",
-    url: "https://thehardwork.tech/register",
+    url: "https://thehardwork.tech/api/register",
     method: "POST",
     body: user,
   });
@@ -31,7 +31,7 @@ export const register = async (user: any) => {
 export const signin = async (user: any) => {
   console.log("Sign");
   return fetcher({
-    url: "https://thehardwork.tech/signin",
+    url: "https://thehardwork.tech/api/signin",
     method: "POST",
     body: user,
   });
