@@ -58,7 +58,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
       }
       router.replace("/home");
 
-      console.log(email, password);
+      // console.log(email, password);
     } catch (e) {
       console.log(e);
     }

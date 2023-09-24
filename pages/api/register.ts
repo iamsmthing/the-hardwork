@@ -27,7 +27,7 @@ export default async function register(
         maxAge: 60 * 60 * 24 * 7,
       })
     );
-    console.log("User created");
+    // console.log("User created");
     res.status(201);
     res.json({ message: "User created" });
     res.end();

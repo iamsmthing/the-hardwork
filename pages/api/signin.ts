@@ -19,8 +19,8 @@ export default async function signin(
       res.json({ error: "Invalid login" });
       return;
     }
-    console.log("req.password:", req.body.password);
-    console.log("user password:", user.password);
+    // console.log("req.password:", req.body.password);
+    // console.log("user password:", user.password);
     // if (req.body.password === user.password) {
     //   const jwt = await createJWT(user);
     //   res.setHeader(
@@ -48,9 +48,9 @@ export default async function signin(
           maxAge: 60 * 60 * 24 * 7,
         })
       );
-      console.log("login");
+      // console.log("login");
       res.status(201);
-      res.json({ message: "Logged in", user: user.id, jwt: jwt });
+      res.json({ message: "Logged in", jwt: jwt });
     }
     // } else {
     else {

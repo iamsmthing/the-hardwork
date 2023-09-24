@@ -22,7 +22,7 @@ export const register = async (user: any) => {
   console.log("user:", user);
   return fetcher({
     // url: "http://localhost:3000/api/register",
-    url: "https://the-hardwork-new.vercel.app/api/register",
+    url: "https://thehardwork.tech/api/register",
     method: "POST",
     body: user,
   });
@@ -31,7 +31,7 @@ export const register = async (user: any) => {
 export const signin = async (user: any) => {
   console.log("Sign");
   return fetcher({
-    url: "https://the-hardwork-new.vercel.app/api/signin",
+    url: "https://thehardwork.tech/api/signin",
     method: "POST",
     body: user,
   });
@@ -39,7 +39,8 @@ export const signin = async (user: any) => {
 
 export const createNewProject = async (name: string) => {
   return fetcher({
-    url: "https://the-hardwork-new.vercel.app/api/project",
+    // url: "https://the-hardwork-new.vercel.app/api/project",
+    url: "https://thehardwork.tech/api/project",
     method: "POST",
     body: { name },
   });
@@ -51,8 +52,8 @@ export const createNewTask = async (
   description: string
 ) => {
   return fetcher({
-    // url: "https://thehardwork.tech/api/project/task",
-    url: "https://the-hardwork-new.vercel.app/api/project/task",
+    url: "https://thehardwork.tech/api/project/task",
+    // url: "https://the-hardwork-new.vercel.app/api/project/task",
     method: "POST",
     body: { name, projectId, description },
   });
