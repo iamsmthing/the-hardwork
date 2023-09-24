@@ -16,16 +16,6 @@ const TaskCard = ({ task }: any) => {
   console.log("id,name,dec:", id, name, description);
   return (
     <Card className="">
-      {/* <div className="flex justify-between items-center">
-        <div>
-          <span className="text-3xl text-gray-600">{task.name}</span>
-        </div>
-        <div>
-          <Button intent="text" className="text-violet-600">
-            + Create New
-          </Button>
-        </div>
-      </div> */}
       <div>
         {name ? (
           <div>

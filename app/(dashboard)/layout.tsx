@@ -19,6 +19,7 @@ export default function DashboardRootLayout({ children }: AuthRootLayoutProps) {
 
           {children}
         </GlassPane>
+        <div id="modal"></div>
       </body>
     </html>
   );

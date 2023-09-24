@@ -35,3 +35,23 @@ export const signin = async (user: any) => {
     body: user,
   });
 };
+
+export const createNewProject = async (name: string) => {
+  return fetcher({
+    url: "http://localhost:3000/api/project",
+    method: "POST",
+    body: { name },
+  });
+};
+
+export const createNewTask = async (
+  name: string,
+  projectId: string,
+  description: string
+) => {
+  return fetcher({
+    url: "http://localhost:3000/api/project/task",
+    method: "POST",
+    body: { name, projectId, description },
+  });
+};

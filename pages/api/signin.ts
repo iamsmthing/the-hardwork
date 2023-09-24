@@ -50,7 +50,7 @@ export default async function signin(
       );
       console.log("login");
       res.status(201);
-      res.json({ message: "Logged in" });
+      res.json({ message: "Logged in", user: user.id, jwt: jwt });
     }
     // } else {
     else {

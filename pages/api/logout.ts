@@ -5,7 +5,10 @@ import { serialize } from "cookie";
 
 const cookieName: string = process.env.COOKIE_NAME;
 
-export default async function loout(req: NextApiRequest, res: NextApiResponse) {
+export default async function logout(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "GET") {
     res.setHeader(
       "Set-Cookie",

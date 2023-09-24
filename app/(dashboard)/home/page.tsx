@@ -1,5 +1,7 @@
 import Greetings from "@/components/Greetings";
 import GreetingsSkeleton from "@/components/GreetingsSkeleton";
+import HomePageTaskCard from "@/components/HomePageTaskCard";
+import NewProject from "@/components/NewProject";
 import ProjectCard from "@/components/ProjectCards";
 import { delay } from "@/lib/async";
 import { getUserFromCookie } from "@/lib/auth";
@@ -50,10 +52,14 @@ export default async function Page() {
             </div>
           ))}
 
-          <div className="w-1/3 p-3">{/* new project here */}</div>
+          <div className="w-1/3 p-3">
+            <NewProject />
+          </div>
         </div>
-        <div className="mt-6 flex-2 grow w-full flex">
-          <div className="w-full">{/* tasks here */}</div>
+        <div className="mt-6 ml-4  flex-2 grow w-full flex">
+          <div className="w-full mb-3">
+            <HomePageTaskCard />
+          </div>
         </div>
       </div>
     </div>
