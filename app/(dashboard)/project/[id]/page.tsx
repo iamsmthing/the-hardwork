@@ -34,7 +34,7 @@ export default async function ProjectPage({ params: { id } }: Props) {
   const project: any = await getData(id);
   console.log("project:", project);
   return (
-    <Card className="w-full py-2 relative mx-1 block bg-cyan-600">
+    <div className="w-full  relative mx-1 block rounded-3xl px-10 py-6 drop-shadow-xl bg-slate-800">
       <div className="mb-4 flex content-center justify-between">
         <h1 className="text-3xl text-gray-50 font-bold mb-4">{project.name}</h1>
         <NewTask id={project.id} />
@@ -57,6 +57,6 @@ export default async function ProjectPage({ params: { id } }: Props) {
           )
         )}
       </div>
-    </Card>
+    </div>
   );
 }
