@@ -2,6 +2,8 @@ import Card from "./Card";
 import Image from "next/image";
 import logo from "@/assets/images/home.png";
 import SidebarLink from "./SidebarLink";
+import { cookies } from "next/headers";
+import { getUserFromCookie } from "@/lib/auth";
 
 const links = [
   { id: 1, label: "Home", icon: "Grid", link: "/home" },
@@ -20,7 +22,7 @@ const links = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = async () => {
   return (
     <Card className="h-full w-40 flex items-center  flex-wrap justify-center">
       <div className="w-full flex justify-center items-center">

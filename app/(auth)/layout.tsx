@@ -10,7 +10,13 @@ export default function AuthRootLayout({ children }: AuthRootLayoutProps) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Next</title>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/assets/images/target.png"
+        ></link>
+
+        <title>The Hardwork</title>
       </head>
       <body className="h-screen w-screen rainbow-mesh p-6">
         <GlassPane className="w-full h-full flex items-center justify-center">
