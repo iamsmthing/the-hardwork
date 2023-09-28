@@ -37,7 +37,7 @@ export default async function Page() {
   const data = await getUserProfile();
   console.log("user data:", data);
   return (
-    <Card className="w-full h-5/6 mt-4 ml-4 mr-4 bg-slate-900 text-white">
+    <div className="rounded-3xl px-10 py-4 drop-shadow-xl w-full h-5/6 mt-4 ml-4 mr-4 bg-slate-900 text-white">
       <p className="text-3xl text-zinc-200 font-bold">Profile</p>
       <div className="flex  content-center   justify-center h-4/5">
         <div className="flex flex-col gap-6 w-3/5  p-5 rounded-xl ">
@@ -66,6 +66,6 @@ export default async function Page() {
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
