@@ -59,3 +59,21 @@ export const createNewTask = async (
     body: { name, projectId, description },
   });
 };
+
+export const getProjects = async (name: string) => {
+  return fetcher({
+    url: "/api/getprojects",
+    // url: "https://thehardwork.tech/api/project",
+    method: "GET",
+    body: "",
+  });
+};
+
+export const getTasks = async (name: string) => {
+  return fetcher({
+    url: "/api/tasks/gettasks",
+    // url: "https://thehardwork.tech/api/project",
+    method: "GET",
+    body: "",
+  });
+};

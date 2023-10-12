@@ -1,5 +1,6 @@
 "use client";
 import { register, signin } from "@/lib/api";
+import { Spinner } from "@nextui-org/react";
 import { useCallback, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,6 +14,7 @@ const registerContent = {
   header: "Create a new Account",
   subheader: "Just a few things to get started",
   buttonText: "Register",
+  actionText: "Creating your account...",
 };
 
 const signinContent = {
@@ -21,21 +23,28 @@ const signinContent = {
   header: "Welcome Back",
   subheader: "Enter your credentials to access your account",
   buttonText: "Sign In",
+  actionText: "Logging in...",
 };
 
 const initial = { email: "", password: "", firstName: "", lastName: "" };
 
-export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
+export default function AuthForm(
+  this: any,
+  { mode }: { mode: "register" | "signin" }
+) {
   const [formState, setFormState] = useState({ ...initial });
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
+    setIsLoading(true);
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
     const firstName = formData.get("firstName");
     const lastName = formData.get("lastName");
+
     const loginData = {
       email,
       password,
@@ -61,13 +70,30 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
       // console.log(email, password);
     } catch (e) {
       console.log(e);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const content = mode === "register" ? registerContent : signinContent;
 
+  const Loader = ({ action }) => {
+    return (
+      <div className="w-full h-full  flex flex-col justify-center items-center ">
+        <Spinner
+          className="justify-center items-center "
+          label={action}
+          color="primary"
+          labelColor="primary"
+        />
+      </div>
+    );
+  };
+
   return (
     <Card className={undefined}>
+      {isLoading ? <Loader action={content.actionText} /> : <div></div>}
+
       <div className="w-full">
         <div className="text-center">
           <h2 className="text-3xl mb-2">{content.header}</h2>

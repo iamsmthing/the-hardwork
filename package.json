@@ -13,6 +13,7 @@
     "seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.13",
     "@prisma/client": "^5.3.0",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
@@ -26,6 +27,7 @@
     "css-reset-and-normalize": "^2.3.6",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.4",
     "jose": "^4.14.6",
     "next": "13.4.19",
     "postcss": "8.4.29",
