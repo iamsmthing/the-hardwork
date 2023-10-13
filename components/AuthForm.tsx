@@ -59,9 +59,11 @@ export default function AuthForm(
     try {
       if (mode === "register") {
         await register(registerData);
+        setIsLoading(false);
         // router.replace("/signin");
       } else {
         await signin(loginData);
+        setIsLoading(false);
 
         // router.replace("/home");
       }
@@ -71,13 +73,13 @@ export default function AuthForm(
     } catch (e) {
       console.log(e);
     } finally {
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   };
 
   const content = mode === "register" ? registerContent : signinContent;
 
-  const Loader = ({ action }) => {
+  const Loader = ({ action }: any) => {
     return (
       <div className="w-full h-full  flex flex-col justify-center items-center ">
         <Spinner

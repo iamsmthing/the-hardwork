@@ -1,4 +1,16 @@
-export const fetcher = async ({ url, method, body, json = true }) => {
+interface FetchType {
+  url: string;
+  method: string;
+  body: object;
+  json: boolean;
+}
+
+export const fetcher = async ({
+  url,
+  method,
+  body,
+  json = true,
+}: FetchType) => {
   const res = await fetch(url, {
     method,
     body: body && JSON.stringify(body),
@@ -25,6 +37,7 @@ export const register = async (user: any) => {
     // url: "https://thehardwork.tech/api/register",
     method: "POST",
     body: user,
+    json: true,
   });
 };
 
@@ -35,6 +48,7 @@ export const signin = async (user: any) => {
     // url: "https://thehardwork.tech/api/signin",
     method: "POST",
     body: user,
+    json: true,
   });
 };
 
@@ -44,6 +58,7 @@ export const createNewProject = async (name: string) => {
     // url: "https://thehardwork.tech/api/project",
     method: "POST",
     body: { name },
+    json: true,
   });
 };
 
@@ -57,6 +72,7 @@ export const createNewTask = async (
     // url: "https://thehardwork.tech/api/project/task",
     method: "POST",
     body: { name, projectId, description },
+    json: true,
   });
 };
 
@@ -65,7 +81,8 @@ export const getProjects = async (name: string) => {
     url: "/api/getprojects",
     // url: "https://thehardwork.tech/api/project",
     method: "GET",
-    body: "",
+    body: {},
+    json: true,
   });
 };
 
@@ -74,6 +91,7 @@ export const getTasks = async (name: string) => {
     url: "/api/tasks/gettasks",
     // url: "https://thehardwork.tech/api/project",
     method: "GET",
-    body: "",
+    body: {},
+    json: true,
   });
 };

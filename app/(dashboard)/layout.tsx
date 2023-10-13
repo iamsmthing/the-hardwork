@@ -10,8 +10,10 @@ export default function DashboardRootLayout({ children }: AuthRootLayoutProps) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Next</title>
+        <link rel="icon" href="./favicon.ico" />
+        <title>The Hardwork</title>
       </head>
       <body className="h-screen w-screen candy-mesh p-6">
         <GlassPane className="w-full h-full flex items-start ">
