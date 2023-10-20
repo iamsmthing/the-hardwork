@@ -11,7 +11,7 @@ const links = [
     id: 2,
     label: "Calendar",
     icon: "Calendar",
-    link: "/calendar",
+    link: "/",
   },
   { id: 3, label: "Profile", icon: "User", link: "/profile" },
   {
