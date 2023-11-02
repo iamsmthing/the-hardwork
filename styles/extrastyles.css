@@ -1,0 +1,7 @@
+.sidebar {
+  height: 90vh;
+}
+.projectCard {
+  overflow-y: scroll;
+  height: 97%;
+}

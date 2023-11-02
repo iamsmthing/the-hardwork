@@ -25,6 +25,7 @@ const getData = async (params: string) => {
     // console.log("id:", params);
     // console.log("project name:", tasks[0].project.name);
     // const projectName = tasks[0].project.name;
+    // console.log("Projects:", tasks);
     return tasks;
   }
 };
@@ -32,9 +33,13 @@ const getData = async (params: string) => {
 export default async function ProjectPage({ params: { id } }: Props) {
   // const tasks: any = await getD(ata(id);
   const project: any = await getData(id);
-  console.log("project:", project);
+  // console.log("project:", project);
+  if (!project) {
+    // Handle the case when project is null or undefined
+    return <div>Project not found or not accessible.</div>;
+  }
   return (
-    <div className="w-full  relative mx-1 block rounded-3xl px-10 py-6 drop-shadow-xl bg-slate-800">
+    <div className="w-full  relative mx-1 block rounded-3xl px-10 py-6 drop-shadow-xl bg-slate-800 projectCard">
       <div className="mb-4 flex content-center justify-between">
         <h1 className="text-3xl text-gray-50 font-bold mb-4">{project.name}</h1>
         <NewTask id={project.id} />

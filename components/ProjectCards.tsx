@@ -5,15 +5,11 @@ import Card from "./Card";
 import clsx from "clsx";
 import { EditIcon, TrashIcon } from "./TrashIcon";
 import { Button } from "@nextui-org/react";
-
+import { useRouter } from "next/navigation";
+import { removeProject } from "@/lib/api";
 const projectWithTasks = Prisma.validator<Prisma.ProjectDefaultArgs>()({
   include: { tasks: true },
 });
-
-const handleClick = (e: any) => {
-  e.preventDefault();
-  console.log("clicked");
-};
 
 type ProjectWithTasks = Prisma.ProjectGetPayload<typeof projectWithTasks>;
 
@@ -26,6 +22,14 @@ const format = (date: string | number | Date) => {
   });
 };
 const ProjectCard: FC<{ project: ProjectWithTasks }> = ({ project }) => {
+  const router = useRouter();
+
+  const handleDelete = async (e: any) => {
+    e.preventDefault();
+    console.log("project:", project);
+    await removeProject(project.id);
+    router.refresh();
+  };
   const completedCount = project.tasks.map((project) => {
     project.status === TASK_STATUS.COMPLETED;
   }).length;
@@ -42,7 +46,7 @@ const ProjectCard: FC<{ project: ProjectWithTasks }> = ({ project }) => {
             isIconOnly
             color="danger"
             aria-label="Like"
-            onClick={handleClick}
+            onClick={handleDelete}
           >
             <TrashIcon />
           </Button>

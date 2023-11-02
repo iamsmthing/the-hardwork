@@ -34,6 +34,7 @@ export default async function middleware(req, res) {
 
   try {
     await verifyJWT(jwt.value);
+
     // const cookie = req.cookies.get("__my_cookie__");
     // console.log(cookie);
     return NextResponse.next();

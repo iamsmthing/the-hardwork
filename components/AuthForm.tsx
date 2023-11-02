@@ -33,6 +33,7 @@ export default function AuthForm(
   { mode }: { mode: "register" | "signin" }
 ) {
   const [formState, setFormState] = useState({ ...initial });
+  const [err, setErr] = useState("");
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,7 +63,13 @@ export default function AuthForm(
         setIsLoading(false);
         // router.replace("/signin");
       } else {
-        await signin(loginData);
+        const user = await signin(loginData);
+        console.log("user:", user);
+        // if (!user) {
+        //   const err = "Some Error Occurred. Try Again!";
+        //   setErr(err);
+        //   setIsLoading(false);
+        // }
         setIsLoading(false);
 
         // router.replace("/home");
@@ -95,7 +102,7 @@ export default function AuthForm(
   return (
     <Card className={undefined}>
       {isLoading ? <Loader action={content.actionText} /> : <div></div>}
-
+      <p>{err}</p>
       <div className="w-full">
         <div className="text-center">
           <h2 className="text-3xl mb-2">{content.header}</h2>

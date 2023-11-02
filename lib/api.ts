@@ -85,7 +85,15 @@ export const getProjects = async (name: string) => {
     json: true,
   });
 };
-
+export const removeProject = async (id: string) => {
+  return fetcher({
+    url: "/api/removeproject",
+    // url: "https://thehardwork.tech/api/project",
+    method: "POST",
+    body: { id },
+    json: true,
+  });
+};
 export const getTasks = async (name: string) => {
   return fetcher({
     url: "/api/tasks/gettasks",

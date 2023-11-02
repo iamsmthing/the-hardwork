@@ -4,6 +4,7 @@ import logo from "@/assets/images/home.png";
 import SidebarLink from "./SidebarLink";
 import { cookies } from "next/headers";
 import { getUserFromCookie } from "@/lib/auth";
+import "@/styles/extrastyles.css";
 
 const links = [
   { id: 1, label: "Home", icon: "Grid", link: "/home" },
@@ -24,7 +25,7 @@ const links = [
 
 const Sidebar = async () => {
   return (
-    <Card className="h-full w-40 flex items-center  flex-wrap justify-center">
+    <Card className="h-full w-40 flex items-center  flex-wrap justify-center sidebar">
       <div className="w-full flex justify-center items-center">
         <Image src={logo} alt="Able logo" priority className="w-12" />
       </div>

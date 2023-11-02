@@ -12,11 +12,11 @@ export default function DashboardRootLayout({ children }: AuthRootLayoutProps) {
         <meta charSet="UTF-8" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./favicon.ico" />
+
         <title>The Hardwork</title>
       </head>
       <body className="h-screen w-screen candy-mesh p-6">
-        <GlassPane className="w-full h-full flex items-start ">
+        <GlassPane className="w-full h-full flex  items-center ">
           <Sidebar />
 
           {children}

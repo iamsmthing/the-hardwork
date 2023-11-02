@@ -1,4 +1,5 @@
 import GlassPane from "@/components/GlassPane";
+import "@/styles/styles.scss";
 import "@/styles/global.css";
 
 interface AuthRootLayoutProps {
@@ -10,11 +11,7 @@ export default function AuthRootLayout({ children }: AuthRootLayoutProps) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/assets/images/target.png"
-        ></link>
+        <link rel="icon" href="./favicon.ico" />
 
         <title>The Hardwork</title>
       </head>
